@@ -1,3 +1,7 @@
+/**
+ * Create a set of diff.html files by comparing all files
+ * with the same name that exist in all the subdirectories.
+ */
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,6 +54,7 @@ public class Main {
 		}
 	}
 
+	// Save the html diff file with a name that indicates comparison results 
 	private void createDiff(FileDetails left, FileDetails right) {
 		diff_match_patch diffChecker = new diff_match_patch();
 		LinkedList<diff_match_patch.Diff> diffs = diffChecker.diff_main(left.content, right.content); 
