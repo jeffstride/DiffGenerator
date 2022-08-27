@@ -57,9 +57,9 @@ public class Main {
 		
 		File rootDir = left.directory.getParentFile();
 		double similar = calcSimilarity(diffs, left.lines) * 100;
-		String filename = String.format("%s-%s-%s (%2.0f%%).html", 
-				left.directory.getName(), right.directory.getName(), 
-				this.filename, similar);
+		String filename = String.format("(%2.0f%%) %s-%s-%s.html", 
+				similar, left.directory.getName(), right.directory.getName(), 
+				this.filename);
 		File differencesFile = Paths.get(rootDir.getAbsolutePath(), filename).toFile();
 		
 		try {
